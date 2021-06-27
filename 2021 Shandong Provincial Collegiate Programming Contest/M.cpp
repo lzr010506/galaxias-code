@@ -7,7 +7,7 @@ inline int read()
 	while (ch < '0' || ch > '9') { if (ch == '-') f = -1; ch = getchar(); }
 	while (ch >= '0' && ch <= '9') { x = x * 10 + ch - '0'; ch = getchar(); }
 	return x * f;
-}
+} 
 char ch[510][510];
 char a[510][510], b[510][510];
 int main()
