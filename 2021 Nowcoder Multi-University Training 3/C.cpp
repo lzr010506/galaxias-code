@@ -90,8 +90,7 @@ int main()
 		{
 			if(b[i] == c[j])
 			{
-				hang.pb(i);
-				lie.pb(j);
+				add(i, j + 501, )
 			} 
 		}
 
