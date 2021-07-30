@@ -1,27 +1,12 @@
-#include <bits/stdc++.h>
-#define ull unsigned long long
-#define ll long long
-#define il inline
-#define db double
-#define ls rt << 1
-#define rs rt << 1 | 1
-#define pb push_back
-#define mp make_pair
-#define pii pair<int, int>
-#define X first
-#define Y second
-#define pcc pair<char, char>
-#define vi vector<int>
-#define vl vector<ll>
-#define rep(i, x, y) for(int i = x; i <= y; i ++)
-#define rrep(i, x, y) for(int i = x; i >= y; i --)
-#define rep0(i, n) for(int i = 0; i < (n); i ++)
-#define per0(i, n) for(int i = (n) - 1; i >= 0; i --)
-#define ept 1e-9
-#define INF 0x3f3f3f3f
-#define sz(x) (x).size()
-#define ALL(x) (x).begin(), (x).end()
-using namespace std;
+#include <bits/stdc++.h> #define ull unsigned long long #define ll long long
+#define il inline #define db double #define ls rt << 1 #define rs rt << 1 | 1
+#define pb push_back #define mp make_pair #define pii pair<int, int> #define X
+first #define Y second #define pcc pair<char, char> #define vi vector<int>
+#define vl vector<ll> #define rep(i, x, y) for(int i = x; i <= y; i ++) #define
+rrep(i, x, y) for(int i = x; i >= y; i --) #define rep0(i, n) for(int i = 0; i <
+(n); i ++) #define per0(i, n) for(int i = (n) - 1; i >= 0; i --) #define ept
+1e-9 #define INF 0x3f3f3f3f #define sz(x) (x).size() #define ALL(x) (x).begin(),
+(x).end() using namespace std;
 
 namespace GenHelper
 {
@@ -78,3 +63,8 @@ int main()
     cout << ans - del / 2;
 	return 0;
 }
+   5 6 7 8
+1  2 4 6 3 
+2  3 3 3 3 
+3  3 3 3 3 
+4  3 3 3 3 
