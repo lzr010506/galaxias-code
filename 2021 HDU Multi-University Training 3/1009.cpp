@@ -29,49 +29,18 @@ inline int read()
     while (ch >= '0' && ch <= '9') { x = x * 10 + ch - '0'; ch = getchar(); }
     return x * f;
 }
-const int N = 110;
-int n, a[N][N], b[N][N];
-vector<pii> f[N][N];
+const int N = 2010;
+
 int main()
 {
-    int T = read();
-    while(T --)
-    {
-        n = read();
-        rep(i, 1, n) rep(j, 1, n) a[i][j] = read();
-        rep(i, 1, n) rep(j, 1, n) b[i][j] = read();
-        rep(i, 1, n) rep(j, 1, n)
+    int n = read();
+    rep(x, 1, n)
+        rep(y, x + 1, n)
         {
-            if (i > 1 && j > 1)
-            {
-                f[i][j].clear();
-                int p = 0, q = 0;
-                for (; p < f[i - 1][j].size() || q < f[i][j - 1].size(); )
-                {
-                    pii t;
-                    if (p < f[i - 1][j].size() && q < f[i][j - 1].size())
-                    {
-                        if (f[i - 1][j][p] > f[i][j - 1][q]) t = f[i][j - 1][q++];
-                        else t = f[i - 1][j][p++];
-                    }
-                    else 
-                    {
-                        if (p == f[i - 1][j].size()) t = f[i][j - 1][q++];
-                        else t = f[i - 1][j][p++];
-                    }
-                    while (!f[i][j].empty() && f[i][j].back().Y <= t.Y) f[i][j].pop_back();
-                    f[i][j].push_back(t);
-                }
-            }
-            else if (i > 1) f[i][j] = f[i - 1][j];
-            else if (j > 1) f[i][j] = f[i][j - 1];
-            else { f[i][j].clear(); f[i][j].push_back(mp(0, 0)); }
-            for (auto &t : f[i][j]) t.X += a[i][j], t.Y += b[i][j];
+            int z = n - x - y;
+            if(z > y) printf("%d %d %d\n", x, y, z);
+            z = 2 * n - x - y;
+            if(z > y) printf("%d %d %d\n", x, y, z);
         }
-        ll ans = 0;
-        for (auto t : f[n][n]) ans = max(ans, 1ll * t.X * t.Y);
-        printf("%lld\n", ans);
-    }
-
     return 0;
 }
