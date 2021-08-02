@@ -1,12 +1,27 @@
-#include <bits/stdc++.h> #define ull unsigned long long #define ll long long
-#define il inline #define db double #define ls rt << 1 #define rs rt << 1 | 1
-#define pb push_back #define mp make_pair #define pii pair<int, int> #define X
-first #define Y second #define pcc pair<char, char> #define vi vector<int>
-#define vl vector<ll> #define rep(i, x, y) for(int i = x; i <= y; i ++) #define
-rrep(i, x, y) for(int i = x; i >= y; i --) #define rep0(i, n) for(int i = 0; i <
-(n); i ++) #define per0(i, n) for(int i = (n) - 1; i >= 0; i --) #define ept
-1e-9 #define INF 0x3f3f3f3f #define sz(x) (x).size() #define ALL(x) (x).begin(),
-(x).end() using namespace std;
+#include <bits/stdc++.h>
+#define ull unsigned long long
+#define ll long long
+#define il inline
+#define db double
+#define ls rt << 1
+#define rs rt << 1 | 1
+#define pb push_back
+#define mp make_pair
+#define pii pair<int, int>
+#define X first
+#define Y second
+#define pcc pair<char, char>
+#define vi vector<int>
+#define vl vector<ll>
+#define rep(i, x, y) for(int i = x; i <= y; i ++)
+#define rrep(i, x, y) for(int i = x; i >= y; i --)
+#define rep0(i, n) for(int i = 0; i < (n); i ++)
+#define per0(i, n) for(int i = (n) - 1; i >= 0; i --)
+#define ept 1e-9
+#define INF 0x3f3f3f3f
+#define sz(x) (x).size()
+#define ALL(x) (x).begin(), (x).end()
+using namespace std;
 
 namespace GenHelper
 {
@@ -34,7 +49,7 @@ namespace GenHelper
         z2=(~x)^0x233333333U;
         z3=x^0x1234598766U;
         z4=(~x)+51;
-      	u = 0;
+        u = 0;
     }
 }
 using namespace GenHelper;
@@ -42,29 +57,24 @@ bool edge[8005][8005];
 int w[8005], bb[8005];
 int main()
 {
-	int n, seed;
-	cin >> n >> seed;
+    int n, seed;
+    cin >> n >> seed;
 
-	srand(seed);
-  	for (int i = 0; i < n; i++)
-    	for (int j = i + 1; j < n; j++)
-    	{
-        	edge[j][i] = edge[i][j] = read();
-        	if(edge[i][j]) w[i] ++, w[j] ++;
-        	else bb[i] ++, bb[j] ++;
-    	}
+    srand(seed);
+    for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+        {
+            edge[j][i] = edge[i][j] = read();
+            if(edge[i][j]) w[i] ++, w[j] ++;
+            else bb[i] ++, bb[j] ++;
+        }
     //rep0(i, n) cout << bb[i] << " " << w[i] << endl; 
     ll ans = 1LL * n * (n - 1) * (n - 2) / 6;
     ll del = 0;
     rep0(i, n)
     {
-    	del += 1LL * bb[i] * w[i];
+        del += 1LL * bb[i] * w[i];
     }
     cout << ans - del / 2;
-	return 0;
+    return 0;
 }
-   5 6 7 8
-1  2 4 6 3 
-2  3 3 3 3 
-3  3 3 3 3 
-4  3 3 3 3 
