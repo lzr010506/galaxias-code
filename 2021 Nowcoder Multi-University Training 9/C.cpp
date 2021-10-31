@@ -35,7 +35,7 @@ inline void write(int n, char c) {
     if (!n) { writeChar('0'); } else { while (n) { ostc[++ol] = n % 10 + 48, n /= 10; } }
     for (; ol; ol--) { writeChar(ostc[ol]); } writeChar(c);
 }
-const int N = 2000010;
+const int N = 4000010;
 const int G = 3;
 const int mod = 998244353;
 const int MOD = mod;
